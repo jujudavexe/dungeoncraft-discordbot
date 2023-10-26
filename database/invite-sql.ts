@@ -13,5 +13,5 @@ connection.executeQuery(createTableQuery, [], (error, results, fields) => {
         throw new Error('Erreur lors de la création de la table : ' + error.message);
     }
 
-    console.log('Table invitation créée/initialisé avec succès !');
+    console.log('Table invitation créée/initialisé avec succès hehe !');
 });

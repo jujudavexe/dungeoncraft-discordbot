@@ -1,5 +1,5 @@
 /*const { SlashCommandBuilder } = require('discord.js');
-const database = require('database'); // Utilisez une vraie base de données en production
+const database = require('database'); // Utiliser une vraie base de données en production
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -14,14 +14,14 @@ module.exports = {
     async execute(interaction) {
         const user = interaction.options.getUser('utilisateur');
 
-        // Récupérez les données d'invitation de l'utilisateur depuis la base de données
+        // Récupérer les données d'invitation de l'utilisateur depuis la base de données
         const inviteData = database.getInviteData(user.id);
 
         if (!inviteData) {
             return interaction.reply("Cet utilisateur n'a pas créé d'invitation sur ce serveur.");
         }
 
-        // Comptez le nombre d'invitations toujours valides
+        // Compter le nombre d'invitations toujours valides
         let invitesStillValid = 0;
 
         for (const invite of inviteData) {

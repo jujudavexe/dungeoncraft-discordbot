@@ -8,7 +8,7 @@ const createTableQuery = `
         \`leave\` TINYINT(1) NOT NULL DEFAULT 0
         );`
 
-connection.executeQuery(createTableQuery, [], (error, results, fields) => {
+connection.executeQuery(createTableQuery, [], (error) => {
     if (error) {
         throw new Error('Erreur lors de la création de la table : ' + error.message);
     }

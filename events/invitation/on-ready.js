@@ -1,7 +1,7 @@
 const wait = require("timers/promises").setTimeout;
 const { Events } = require('discord.js');
-const {invites} = require("./invitation-handler.ts")
-const {guildId} = require('../../config.ts');
+const {invites} = require("./invitation-handler.js")
+const {guildId} = require('../../config.js');
 
 module.exports = {
     name: Events.ClientReady,

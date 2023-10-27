@@ -8,7 +8,7 @@ module.exports = async client => {
 
     for (const folder of commandFolders) {
         const eventsPath = path.join(foldersPath, folder);
-        const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.ts')).filter(file => !file.endsWith('handler.ts'));
+        const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js')).filter(file => !file.endsWith('handler.js'));
 
         for (const file of eventFiles) {
             const filePath = path.join(eventsPath, file);

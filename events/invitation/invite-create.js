@@ -1,5 +1,5 @@
 const {Events} = require('discord.js');
-const {invites} = require('./invitation-handler.ts')
+const {invites} = require('./invitation-handler.js')
 
 module.exports = {
     name: Events.InviteCreate,

@@ -1,4 +1,4 @@
-const connection = require("./sql-connection.ts")
+const connection = require("./sql-connection.js")
 
 const createTableQuery = `
     CREATE TABLE IF NOT EXISTS invitation (

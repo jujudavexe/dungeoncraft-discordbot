@@ -12,5 +12,8 @@
   "dependencies": {
     "discord.js": "^14.13.0",
     "mysql2": "^3.6.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
   }
 }

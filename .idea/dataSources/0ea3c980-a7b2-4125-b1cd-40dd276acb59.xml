@@ -1141,8 +1141,8 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="324" parent="1" name="dungeoncraftdiscord">
-      <IntrospectionTimestamp>2023-10-27.02:52:46</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-10-26.22:52:46</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-10-27.17:01:08</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-10-27.13:01:08</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="325" parent="1" name="information_schema">
@@ -1196,7 +1196,7 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="337" parent="334" name="invite_link">
+    <column id="337" parent="334" name="invitation_link">
       <DasType>varchar(8)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>

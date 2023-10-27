@@ -1,5 +1,5 @@
 const wait = require("timers/promises").setTimeout;
-const { Events, Collection } = require('discord.js');
+const { Events } = require('discord.js');
 const {invites} = require("./invitation-handler.ts")
 const {guildId} = require('../../config.ts');
 

@@ -21,10 +21,10 @@ function addInvitation(inviter, invited, link, callback) {
     connection.executeQuery(query, [inviter, invited, link], callback);
 }
 
-function setLeave(callback) {
+/*function setLeave(callback) {
     const query = "INSERT INTO invitation (`leave`) VALUES (?)";
     connection.executeQuery(query, [1], callback);
-}
+}*/
 
 module.exports = {
     addInvitation

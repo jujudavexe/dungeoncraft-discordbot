@@ -14,7 +14,7 @@ module.exports = {
 
         // Fetch all Guild Invites
         const firstInvites = await guild.invites.fetch();
-        // Set the key as Guild ID, and create a map which has the invite code, and the number of uses
-        invites.set(firstInvites.map((invite) => [invite.code, invite.uses]));
+        firstInvites.forEach(invite => invites.set(invite.code, invite.uses))
+
     },
 };

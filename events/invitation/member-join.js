@@ -1,5 +1,6 @@
 const { Events } = require('discord.js');
 const { invites } = require('./invitation-handler.js');
+const invitationData = require("../../database/invitation-sql.js")
 
 module.exports = {
     name: Events.GuildMemberAdd,
@@ -18,7 +19,9 @@ module.exports = {
             const logChannel = member.guild.channels.cache.find(channel => channel.name === "général");
 
             // A real basic message with the information we need.
-            logChannel.send(`${member.user.tag} a rejoint en utilisant l'invitation ${invite.code} de ${inviter.tag}. L'invitation a été utilisée ${invite.uses} fois depuis sa création.`);
+            logChannel.send(`${member.user.tag} a rejoint en utilisant l'invitation ${invite.code} de ${inviter.tag}.`);
+
+            invitationData.addInvitation(inviter.tag, member.user.tag)
         } else {
             const logChannel = member.guild.channels.cache.find(channel => channel.name === "général");
             logChannel.send(`${member.user.tag} a rejoint mais on ne sait pas grâce à quelle invitation.`);

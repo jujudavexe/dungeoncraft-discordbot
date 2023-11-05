@@ -5,7 +5,7 @@ const client = require('../../main.js');
 module.exports = {
     name: Events.GuildMemberAdd,
     once: false,
-    async execute(member) {
+    async execute(member, client) {
         // To compare, we need to load the current invite list.
         const newInvites = await member.guild.invites.fetch();
         // Look through the invites, find the one for which the uses went up.

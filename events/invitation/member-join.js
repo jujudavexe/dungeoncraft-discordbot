@@ -1,6 +1,5 @@
 const { Events } = require('discord.js');
 const { invites } = require('./invitation-handler.js');
-const client = require('../../main.js');
 
 module.exports = {
     name: Events.GuildMemberAdd,

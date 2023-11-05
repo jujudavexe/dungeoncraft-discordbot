@@ -12,9 +12,5 @@ client.login(token).then(() => {
     console.log("Ready");
 });
 
-module.exports = {
-    client,
-};
-
 
 

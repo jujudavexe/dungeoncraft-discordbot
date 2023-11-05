@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const database = require('../../database/invitation-sql');
 
 module.exports = {
@@ -23,8 +23,14 @@ module.exports = {
         const numberOfHere = numberOfHereResult.length;
         const numberOfLeaved = numberOfLeavedResult.length;
 
-        await interaction.reply(`Nombre de personne invitée encore présente : ${numberOfHere} \n` +
-                                `Nombre de personne invitée aillant quitté : ${numberOfLeaved} \n` +
-                                `Total : ${numberOfHere + numberOfLeaved}`);
+        const embed = new EmbedBuilder()
+            .setTitle('Statistiques d\'invitation')
+            .setDescription(`👥 Invités ${numberOfHere} personnes\n` +
+                `👋 Quittés, ${numberOfLeaved} personnes\n` +
+                `Total : ${numberOfHere + numberOfLeaved}`)
+            .setColor('#00b0fd') // Utilisez un code de couleur personnalisé (en hexadécimal)
+            .setFooter({text: 'Statistiques d\'invitation fournies par notre bot!'})
+
+        await interaction.reply({ embeds: [embed] });
     },
 };

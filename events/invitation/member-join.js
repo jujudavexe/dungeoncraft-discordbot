@@ -6,8 +6,7 @@ module.exports = {
     name: Events.GuildMemberAdd,
     once: false,
     async execute(member) {
-        console.log(client)
-        /*// To compare, we need to load the current invite list.
+        // To compare, we need to load the current invite list.
         const newInvites = await member.guild.invites.fetch();
         // Look through the invites, find the one for which the uses went up.
         const invite = newInvites.find(i => i.uses > invites.get(i.code));
@@ -24,7 +23,7 @@ module.exports = {
         } else {
             const logChannel = member.guild.channels.cache.find(channel => channel.name === "général");
             logChannel.send(`${member.user.tag} a rejoint mais on ne sait pas grâce à quelle invitation.`);
-        }*/
+        }
     },
 };
 

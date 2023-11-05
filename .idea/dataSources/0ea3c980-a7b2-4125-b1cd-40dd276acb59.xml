@@ -1166,8 +1166,8 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <CollationName>latin1_swedish_ci</CollationName>
     </schema>
     <schema id="329" parent="1" name="dungeoncraftdiscord">
-      <IntrospectionTimestamp>2023-10-27.17:01:08</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-10-27.13:01:08</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-05.20:11:11</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-05.18:11:11</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <user id="330" parent="1" name="root">
@@ -1196,16 +1196,11 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="337" parent="334" name="invitation_link">
-      <DasType>varchar(8)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="338" parent="334" name="leave">
+    <column id="337" parent="334" name="leave">
       <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
-      <Position>4</Position>
+      <Position>3</Position>
     </column>
   </database-model>
 </dataSource>

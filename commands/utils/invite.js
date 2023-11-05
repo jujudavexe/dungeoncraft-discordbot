@@ -1,5 +1,5 @@
-/*const { SlashCommandBuilder } = require('discord.js');
-const database = require('database'); // Utiliser une vraie base de données en production
+const { SlashCommandBuilder } = require('discord.js');
+const database = require('../../database/invitation-sql');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -15,21 +15,16 @@ module.exports = {
         const user = interaction.options.getUser('utilisateur');
 
         // Récupérer les données d'invitation de l'utilisateur depuis la base de données
-        const inviteData = database.getInviteData(user.id);
 
-        if (!inviteData) {
-            return interaction.reply("Cet utilisateur n'a pas créé d'invitation sur ce serveur.");
-        }
+        const numberOfHereResult = await database.getMemberHere(user.tag);
+        const numberOfLeavedResult = await database.getMemberLeaved(user.tag);
 
-        // Compter le nombre d'invitations toujours valides
-        let invitesStillValid = 0;
+        // Vérifiez si les résultats sont définis avant d'accéder à leur longueur
+        const numberOfHere = numberOfHereResult.length;
+        const numberOfLeaved = numberOfLeavedResult.length;
 
-        for (const invite of inviteData) {
-            if (invite.isValid) {
-                invitesStillValid++;
-            }
-        }
-
-        await interaction.reply(`${user.tag} a invité ${invitesStillValid} personnes sur le serveur.`);
+        await interaction.reply(`Nombre de personne invitée encore présente : ${numberOfHere} \n` +
+                                `Nombre de personne invitée aillant quitté : ${numberOfLeaved} \n` +
+                                `Total : ${numberOfHere + numberOfLeaved}`);
     },
-};*/
+};

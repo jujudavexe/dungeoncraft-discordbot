@@ -61,8 +61,47 @@ function setUserQuit(invited) {
     });
 }
 
+function getMemberHere(inviter) {
+    return new Promise((resolve, reject) => {
+        if (inviter) {
+            const query = "SELECT * FROM invitation WHERE inviter_ID = ? AND `leave` = 0";
+            connection.executeQuery(query, [inviter], (error, result) => {
+                if (error) {
+                    console.error("Erreur lors de l'exécution de la requête SQL : ", error);
+                    reject(error);
+                } else {
+                    resolve(result);
+                }
+            });
+        } else {
+            resolve([]);
+        }
+    });
+}
+
+function getMemberLeaved(inviter) {
+    return new Promise((resolve, reject) => {
+        if (inviter) {
+            const query = "SELECT * FROM invitation WHERE inviter_ID = ? AND `leave` = 1";
+            connection.executeQuery(query, [inviter], (error, result) => {
+                if (error) {
+                    console.error("Erreur lors de l'exécution de la requête SQL : ", error);
+                    reject(error);
+                } else {
+                    resolve(result);
+                }
+            });
+        } else {
+            resolve([]);
+        }
+    });
+}
+
+
 
 module.exports = {
     addInvitation,
-    setUserQuit
+    setUserQuit,
+    getMemberHere,
+    getMemberLeaved
 };

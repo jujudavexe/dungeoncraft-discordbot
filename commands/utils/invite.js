@@ -18,8 +18,7 @@ module.exports = {
 
         const numberOfHereResult = await database.getMemberHere(user.tag);
         const numberOfLeavedResult = await database.getMemberLeaved(user.tag);
-
-        // Vérifiez si les résultats sont définis avant d'accéder à leur longueur
+        
         const numberOfHere = numberOfHereResult.length;
         const numberOfLeaved = numberOfLeavedResult.length;
 

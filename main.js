@@ -8,7 +8,6 @@ client.commands = new Collection();
 loadCommand(client)
 loadEvent(client)
 
-console.log(process.env.TOKEN)
 client.login(process.env.TOKEN).then(() => {
     console.log("Ready");
 });

@@ -1,10 +1,10 @@
 const mysql = require('mysql2');
 
 const con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "dungeoncraftdiscord"
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 });
 
 con.connect(function (err) {

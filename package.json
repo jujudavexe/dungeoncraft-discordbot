@@ -12,7 +12,7 @@
   "dependencies": {
     "discord.js": "^14.13.0",
     "dotenv": "^16.3.1",
-    "mysql2": "^3.6.2",
+    "mysql2": "^3.9.7",
     "timers": "^0.1.1"
   },
   "devDependencies": {
